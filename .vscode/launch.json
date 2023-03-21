@@ -1,0 +1,237 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "SearchInsertPosition2",
+            "request": "launch",
+            "mainClass": "com.practice.searching.binary_search.SearchInsertPosition2",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "MissingNumber",
+            "request": "launch",
+            "mainClass": "com.practice.bit_manipulation.MissingNumber",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "MergeSorted",
+            "request": "launch",
+            "mainClass": "com.practice.arrays.MergeSorted",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "TwoSum",
+            "request": "launch",
+            "mainClass": "com.practice.arrays.TwoSum",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Quicksort",
+            "request": "launch",
+            "mainClass": "com.practice.sorting.Quicksort",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Quicksort",
+            "request": "launch",
+            "mainClass": "com.java.sorting.Quicksort",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Quicksort",
+            "request": "launch",
+            "mainClass": "Quicksort",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "RotateArray",
+            "request": "launch",
+            "mainClass": "RotateArray",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "TrappingRainwater",
+            "request": "launch",
+            "mainClass": "TrappingRainwater",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "TowerOfHanoi",
+            "request": "launch",
+            "mainClass": "TowerOfHanoi",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "ContainsDuplicate",
+            "request": "launch",
+            "mainClass": "ContainsDuplicate",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "SearchInsertPosition2",
+            "request": "launch",
+            "mainClass": "SearchInsertPosition2",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stocks2",
+            "request": "launch",
+            "mainClass": "Stocks2",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch Stocks1",
+            "request": "launch",
+            "mainClass": "Stocks1",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch MaxSumSubarray",
+            "request": "launch",
+            "mainClass": "MaxSumSubarray",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch MajorityElement",
+            "request": "launch",
+            "mainClass": "MajorityElement",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch ValidParentheses",
+            "request": "launch",
+            "mainClass": "ValidParentheses",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch MergeSorted",
+            "request": "launch",
+            "mainClass": "MergeSorted",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch Backtracking",
+            "request": "launch",
+            "mainClass": "Backtracking",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch Math",
+            "request": "launch",
+            "mainClass": "Math",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch StringPerms",
+            "request": "launch",
+            "mainClass": "StringPerms",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch Recursion",
+            "request": "launch",
+            "mainClass": "Recursion",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch PlusOne",
+            "request": "launch",
+            "mainClass": "PlusOne",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch RemoveDuplicates",
+            "request": "launch",
+            "mainClass": "RemoveDuplicates",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch BitManipulation",
+            "request": "launch",
+            "mainClass": "BitManipulation",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch MissingNumber",
+            "request": "launch",
+            "mainClass": "MissingNumber",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch ReverseBits",
+            "request": "launch",
+            "mainClass": "ReverseBits",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch NumberOf1Bits",
+            "request": "launch",
+            "mainClass": "NumberOf1Bits",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch SingleNumber",
+            "request": "launch",
+            "mainClass": "SingleNumber",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "Launch RomanToInteger",
+            "request": "launch",
+            "mainClass": "RomanToInteger",
+            "projectName": "practiceQuestions_f6fa1a89"
+        },
+        {
+            "type": "java",
+            "name": "Launch TwoSum",
+            "request": "launch",
+            "mainClass": "TwoSum",
+            "projectName": "practiceQuestions_f6fa1a89"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}
