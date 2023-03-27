@@ -6,6 +6,90 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SingleNumberII",
+            "request": "launch",
+            "mainClass": "com.practice.bit_manipulation.SingleNumberII",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "SingleNumberI",
+            "request": "launch",
+            "mainClass": "com.practice.bit_manipulation.SingleNumberI",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "SingleNumberIII",
+            "request": "launch",
+            "mainClass": "com.practice.bit_manipulation.SingleNumberIII",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "BitManipulation",
+            "request": "launch",
+            "mainClass": "com.practice.bit_manipulation.BitManipulation",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "LongestSubstringWORepeatingChar",
+            "request": "launch",
+            "mainClass": "LongestSubstringWORepeatingChar",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "SingleElementSorted",
+            "request": "launch",
+            "mainClass": "com.practice.searching.binary_search.SingleElementSorted",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "MissingNumbers",
+            "request": "launch",
+            "mainClass": "MissingNumbers",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "SearchInRotatedSorted",
+            "request": "launch",
+            "mainClass": "com.practice.searching.binary_search.SearchInRotatedSorted",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "FirstNLast",
+            "request": "launch",
+            "mainClass": "com.practice.searching.binary_search.FirstNLast",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "BinarySearch",
+            "request": "launch",
+            "mainClass": "com.practice.searching.binary_search.BinarySearch",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "PeakElement",
+            "request": "launch",
+            "mainClass": "com.practice.searching.binary_search.PeakElement",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
+            "name": "LongestSubarraySumK",
+            "request": "launch",
+            "mainClass": "com.practice.sliding_window.LongestSubarraySumK",
+            "projectName": "PracticeQuestions_e1be5a69"
+        },
+        {
+            "type": "java",
             "name": "SearchInsertPosition2",
             "request": "launch",
             "mainClass": "com.practice.searching.binary_search.SearchInsertPosition2",

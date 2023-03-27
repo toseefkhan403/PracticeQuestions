@@ -21,5 +21,29 @@ public class TowerOfHanoi {
         // move n-1 discs from B to C using A as aux
         towerOfHanoi(n-1, aux, source, dest);
     }
+
+    // hackerrank problem
+    public static int hanoi_tower(int n) {
+        // Write your code here
+            toh(n,'A','B','C');
+            return steps;
+    }
+        
+    static int steps = 0;
+        
+    public static void toh(int n, char source, char aux, char dest) {
+        if(n==1) {
+            // from source to dest
+            steps++;
+            return;
+        }
+            
+        toh(n-1,source,dest,aux);
+            
+        steps++;
+
+        // from A to C 
+        toh(n-1, aux, source, dest);         
+    }
     
 }
