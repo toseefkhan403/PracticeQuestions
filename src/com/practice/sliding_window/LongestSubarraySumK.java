@@ -1,5 +1,7 @@
 package com.practice.sliding_window;
 
+import java.util.HashMap;
+
 public class LongestSubarraySumK {
 
     public static void main(String[] args) {
@@ -7,6 +9,7 @@ public class LongestSubarraySumK {
         System.out.println(longestSubarraySumK(arr, 15));
     }
 
+    // instead of this, take all subarrays to find maxLength
     private static int longestSubarraySumKBrute(int[] arr, int k) {
         int start = 0;
         int end = 0;
@@ -65,6 +68,29 @@ public class LongestSubarraySumK {
         }
 
         // O(N), O(1)
+        return maxLength;
+    }
+
+    // store currsum with index in hashmap - in the loop look for currsum-sum - answer is index+1 till i - calc maxLength
+    // similar to subarraywithgivensum - O(N), O(N)
+    public static int findMaxLength(int[] nums, int sum) {
+        int currSum = 0; int maxLength = 0;
+        HashMap<Integer,Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            currSum+=nums[i];
+
+            if(currSum==sum) {
+                maxLength = Math.max(maxLength, i+1);
+            }
+
+            if(map.containsKey(currSum-sum)) {
+                maxLength = Math.max(maxLength, i-map.get(currSum-sum));
+            }
+
+            map.put(currSum, i);
+        }
+
         return maxLength;
     }
     

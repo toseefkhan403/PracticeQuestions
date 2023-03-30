@@ -19,6 +19,7 @@ public class SingleNumberIII {
 
         int rmsb = BitManipulation.rightMostSetBit(res);
         
+        // can be done without using space
         int[] leftArr = new int[nums.length];
         
         for (int i = 0; i < nums.length; i++) {
@@ -43,7 +44,7 @@ public class SingleNumberIII {
         System.out.println("Second element: " + b);
     }
 
-    // submitted solution
+    // submitted solution - O(n),O(1)
     public static int[] singleNumber(int[] nums) {
         int n = nums.length;
         // xor all
@@ -64,29 +65,20 @@ public class SingleNumberIII {
             temp = temp >> 1;
         }
 
-        // make the group with ith set bit
-        int[] leftArr = new int[n];
-
+        // xor leftArr with res
+        int a = res;
         for(int j=0; j<n; j++) {
-        // can do ==1 ONLY because shifting right by pos - else HAVE TO DO ==0 and check 1 with else condition
-            if((nums[j] & (1<<i)) == 0) {
-                leftArr[j] = 0;
-            } else {
-                leftArr[j] = nums[j];
+        // can do !=0 ONLY - not ==1
+            if((nums[j] & (1<<i)) != 0) {
+                a^=nums[j];
             }
         }
 
-        // xor leftArr with res
-        int temp2 = res;
-        for(int j=0; j<n; j++) {
-            temp2^=leftArr[j];
-        }
-
-        // first element = temp2
-        res^=temp2;
+        // first element = a
+        res^=a;
         // second element = res
         
-        return new int[]{temp2, res};
+        return new int[]{a, res};
     }
     
 }

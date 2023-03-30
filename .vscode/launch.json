@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ContiguousArray",
+            "request": "launch",
+            "mainClass": "com.practice.hashmap.ContiguousArray",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "LongestSubarraySumK",
+            "request": "launch",
+            "mainClass": "com.practice.sliding_window.LongestSubarraySumK",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "SubarrayWithGivenSum",
+            "request": "launch",
+            "mainClass": "com.practice.hashmap.SubarrayWithGivenSum",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "BooksAllocation",
+            "request": "launch",
+            "mainClass": "com.practice.searching.binary_search.BooksAllocation",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "ThreeSum",
+            "request": "launch",
+            "mainClass": "com.practice.arrays.ThreeSum",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "ValidParentheses",
+            "request": "launch",
+            "mainClass": "com.practice.stack.ValidParentheses",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
             "name": "SingleNumberII",
             "request": "launch",
             "mainClass": "com.practice.bit_manipulation.SingleNumberII",

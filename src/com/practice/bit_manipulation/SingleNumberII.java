@@ -7,12 +7,14 @@ public class SingleNumberII {
         System.out.println(uniqueInK(new int[]{5,4,5,1,4,1,4,7,5,1}, 3));
     }
 
-    // increasing bitcount at a particular position - % k - get binary eg. 101 - result - gives in decimal tho
+    // 32 times nums loop - increasing bitcount at a particular position - % k - get binary eg. 101 - result - gives in decimal tho
     public static int uniqueInK(int[] nums, int k) {
         int result = 0;
         
+        // O(32n) -> O(n)
         for (int i = 0; i < 32; i++) {
             int bitCount = 0;
+            // for each position go thru all the elements of nums
             for (int j = 0; j < nums.length; j++) {
                 // finding ith set bit - not ==1 - keep !=0 ONLY - cuz it can be 0001000 and not found with ==1
                 if((nums[j] & (1<<i)) != 0) {

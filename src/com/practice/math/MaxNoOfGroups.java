@@ -40,7 +40,7 @@ public class MaxNoOfGroups {
     private static int maximumGroups(int[] grades) {
         int n = grades.length;
         int res = (int) Math.sqrt(n * 2);
-        // if formula gives <= n - res is answer - else overflown - so res-1 is the answer
+        // if formula on res gives <= n - res is answer - else overflown - so res-1 is the answer
         if(res*(res+1)/2 <= n) {
             return res;
         } else {
