@@ -6,6 +6,111 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TwoSum2",
+            "request": "launch",
+            "mainClass": "com.practice.arrays.TwoSum2",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "LongestRepeatingCharacterReplacement",
+            "request": "launch",
+            "mainClass": "com.practice.sliding_window.LongestRepeatingCharacterReplacement",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "FruitIntoBaskets",
+            "request": "launch",
+            "mainClass": "com.practice.sliding_window.FruitIntoBaskets",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "PairSums",
+            "request": "launch",
+            "mainClass": "com.practice.arrays.PairSums",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "FirstMissingPositive",
+            "request": "launch",
+            "mainClass": "com.practice.arrays.FirstMissingPositive",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "LongestSubstringKdistinct",
+            "request": "launch",
+            "mainClass": "com.practice.sliding_window.LongestSubstringKdistinct",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "MaximumAverageSubarrayI",
+            "request": "launch",
+            "mainClass": "com.practice.sliding_window.MaximumAverageSubarrayI",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "SpiralMatrix",
+            "request": "launch",
+            "mainClass": "com.practice.arrays2D.SpiralMatrix",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "RotateImage",
+            "request": "launch",
+            "mainClass": "com.practice.arrays2D.RotateImage",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "PascalsTriangle",
+            "request": "launch",
+            "mainClass": "com.practice.arrays2D.PascalsTriangle",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "TransposeMatrix",
+            "request": "launch",
+            "mainClass": "com.practice.arrays2D.TransposeMatrix",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "SortColors",
+            "request": "launch",
+            "mainClass": "com.practice.arrays.SortColors",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "SmallestAndSecondSmallest",
+            "request": "launch",
+            "mainClass": "com.practice.arrays.SmallestAndSecondSmallest",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "Permutations",
+            "request": "launch",
+            "mainClass": "com.practice.recursion.Permutations",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "DistinctElementsEveryWindow",
+            "request": "launch",
+            "mainClass": "com.practice.hashmap.DistinctElementsEveryWindow",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
             "name": "ContiguousArray",
             "request": "launch",
             "mainClass": "com.practice.hashmap.ContiguousArray",

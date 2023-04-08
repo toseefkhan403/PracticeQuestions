@@ -10,7 +10,7 @@ import java.util.List;
 public class ThreeSum {
 
     public static void main(String[] args) {
-        System.out.println(threeSumBetter(new int[] { -1, 0, 1, 0 }));
+        System.out.println(threeSumOpti(new int[] { -1, 0, 1, 0 }));
     }
 
     // find all triplets - sort and add to hashset to avoid repetitions - return set
@@ -91,7 +91,7 @@ public class ThreeSum {
      * if x<sum - just low++ - no need to skip to unique - above while loop will
      * take care of it
      */
-    public static List<List<Integer>> threeSum(int[] nums) {
+    public static List<List<Integer>> threeSumOpti(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(nums);
         int low = 0;
