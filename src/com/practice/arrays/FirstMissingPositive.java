@@ -8,6 +8,7 @@ public class FirstMissingPositive {
     }
 
     // todo do brute and better
+    
 
     // put elements in correct order - 1 2 3 4 5 - check at the end
     public static int firstMissingPositive(int[] nums) {

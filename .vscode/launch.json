@@ -6,6 +6,62 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SetMatrixZeroes",
+            "request": "launch",
+            "mainClass": "com.practice.arrays2D.SetMatrixZeroes",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "ReverseKGroupAlternating",
+            "request": "launch",
+            "mainClass": "com.practice.linked_list.ReverseKGroupAlternating",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "PalindromeLL",
+            "request": "launch",
+            "mainClass": "com.practice.linked_list.PalindromeLL",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "AddTwoNumbers",
+            "request": "launch",
+            "mainClass": "com.practice.linked_list.AddTwoNumbers",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "SquaresofSortedArray",
+            "request": "launch",
+            "mainClass": "com.practice.arrays.SquaresofSortedArray",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "UniquePaths",
+            "request": "launch",
+            "mainClass": "com.practice.arrays2D.UniquePaths",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "NextPermutation",
+            "request": "launch",
+            "mainClass": "com.practice.arrays.NextPermutation",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "LLBasics",
+            "request": "launch",
+            "mainClass": "com.practice.linked_list.LLBasics",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
             "name": "TwoSum2",
             "request": "launch",
             "mainClass": "com.practice.arrays.TwoSum2",
