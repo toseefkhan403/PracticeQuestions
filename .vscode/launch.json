@@ -6,6 +6,174 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ConnectNRopesMinCost",
+            "request": "launch",
+            "mainClass": "com.practice.heap.ConnectNRopesMinCost",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "SuperDigit",
+            "request": "launch",
+            "mainClass": "com.practice.recursion.SuperDigit",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "NodesAtKDistance",
+            "request": "launch",
+            "mainClass": "com.practice.trees.NodesAtKDistance",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "RatMaze",
+            "request": "launch",
+            "mainClass": "com.practice.recursion.RatMaze",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "PermSeq",
+            "request": "launch",
+            "mainClass": "com.practice.recursion.PermSeq",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "PalindromePartitioning",
+            "request": "launch",
+            "mainClass": "com.practice.recursion.PalindromePartitioning",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "MaxWidth",
+            "request": "launch",
+            "mainClass": "com.practice.trees.MaxWidth",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "LCA",
+            "request": "launch",
+            "mainClass": "com.practice.trees.LCA",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "RootToNode",
+            "request": "launch",
+            "mainClass": "com.practice.trees.RootToNode",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "LeftNRightView",
+            "request": "launch",
+            "mainClass": "com.practice.trees.LeftNRightView",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "TopNBottomView",
+            "request": "launch",
+            "mainClass": "com.practice.trees.TopNBottomView",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "TopView",
+            "request": "launch",
+            "mainClass": "com.practice.trees.TopView",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "VerticalOrderTraversal",
+            "request": "launch",
+            "mainClass": "com.practice.trees.VerticalOrderTraversal",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "BoundaryTraversal",
+            "request": "launch",
+            "mainClass": "com.practice.trees.BoundaryTraversal",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "BalancedBT",
+            "request": "launch",
+            "mainClass": "com.practice.trees.BalancedBT",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "FlatteningLL",
+            "request": "launch",
+            "mainClass": "com.practice.linked_list.FlatteningLL",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "LevelOrderTraversal",
+            "request": "launch",
+            "mainClass": "com.practice.trees.LevelOrderTraversal",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "TreeBasics",
+            "request": "launch",
+            "mainClass": "com.practice.trees.TreeBasics",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "NodeSum",
+            "request": "launch",
+            "mainClass": "com.practice.trees.NodeSum",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "Traversal",
+            "request": "launch",
+            "mainClass": "com.practice.trees.Traversal",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "ValidateSubsequence",
+            "request": "launch",
+            "mainClass": "com.practice.arrays.ValidateSubsequence",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "Backtracking",
+            "request": "launch",
+            "mainClass": "com.practice.recursion.Backtracking",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "StackUsingLL",
+            "request": "launch",
+            "mainClass": "com.practice.stack.StackUsingLL",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "StackUsingArrays",
+            "request": "launch",
+            "mainClass": "com.practice.stack.StackUsingArrays",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
             "name": "SetMatrixZeroes",
             "request": "launch",
             "mainClass": "com.practice.arrays2D.SetMatrixZeroes",

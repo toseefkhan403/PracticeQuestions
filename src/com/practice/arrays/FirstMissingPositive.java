@@ -1,5 +1,7 @@
 package com.practice.arrays;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class FirstMissingPositive {
@@ -7,10 +9,7 @@ public class FirstMissingPositive {
         System.out.println(firstMissingPositive(new int[] { -1, 4, 2, 1, 9, 10 }));
     }
 
-    // todo do brute and better
-    
-
-    // put elements in correct order - 1 2 3 4 5 - check at the end
+    // trick: put elements in correct order - 1 2 3 4 5 - check at the end
     public static int firstMissingPositive(int[] nums) {
         int n = nums.length;
         for (int i = 0; i < n; i++) {
@@ -40,6 +39,75 @@ public class FirstMissingPositive {
 
         // everybody at their correct position - next number is the answer
         return n + 1;
+    }
+
+    // hashmap for i to n with true or false - first false is the ans
+    public static int firstMissingPositiveSpace(int[] nums) {
+        HashMap<Integer, Boolean> map = new HashMap<>();
+
+        // fill the map with 1 to n
+        for (int i = 1; i <= nums.length; i++) {
+            map.put(i, false);
+        }
+
+        // make present elements true
+        for (int i = 0; i < nums.length; i++) {
+            if (map.get(nums[i]) != null) {
+                map.put(nums[i], true);
+            }
+        }
+
+        // first false is the ans
+        for (int i = 1; i <= nums.length; i++) {
+            if (!map.get(i)) {
+                return i;
+            }
+        }
+
+        // everybody present - n+1 is the answer
+        return nums.length + 1;
+    }
+
+    // store all elements in the hashset - then loop for i - if not found in the set
+    // - return
+    public static int firstMissingPositiveSpaceI(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            set.add(nums[i]);
+        }
+
+        for (int i = 1; i <= nums.length; i++) {
+            if (!set.contains(i)) {
+                return i;
+            }
+        }
+
+        // everybody present - n+1 is the answer
+        return nums.length + 1;
+    }
+
+    // find the posiive numbers one by one in the arr - O(n^2)
+    public static int firstMissingPositiveBrute(int[] nums) {
+        boolean iFound = false;
+
+        for (int i = 1; i <= nums.length; i++) {
+            // find i in the array
+            // linear search
+            iFound = false;
+            for (int j = 0; j < nums.length; j++) {
+                if (i == nums[j]) {
+                    iFound = true;
+                    break;
+                }
+            }
+
+            if (!iFound)
+                return i;
+        }
+
+        // everybody present - n+1 is the answer
+        return nums.length + 1;
     }
 
     // put elements in correct order - 1 2 3 4 5 - check at the end

@@ -2,7 +2,7 @@ package com.practice.linked_list;
 
 public class LLBasics {
     public static void main(String[] args) {
-        // create a LL
+        // create a LL - 1-indexed
         Node head = new Node(10);
         Node n2 = new Node(20);
         Node n3 = new Node(30);
@@ -12,8 +12,8 @@ public class LLBasics {
         n2.next = n3;
         n3.next = n4;
         // traverse(head);
-        // head = insert(head, 0, 1);
-        head = insert(head, 4, 25);
+        // head = insert(head, 1, 1);
+        head = insert(head, 5, 25);
         traverse(head);
         System.out.println();
         head = delete(head, 4);
@@ -37,7 +37,7 @@ public class LLBasics {
     public static Node insert(Node head, int position, int data) {
         Node toAdd = new Node(data);
 
-        if (position == 0) {
+        if (position <= 1) {
             // make head
             toAdd.next = head;
             head = toAdd;
@@ -46,7 +46,7 @@ public class LLBasics {
 
         Node curr = head;
         // not <pos
-        for (int i = 0; i < position - 1; i++) {
+        for (int i = 1; i < position - 1; i++) {
             curr = curr.next;
         }
 
@@ -56,22 +56,28 @@ public class LLBasics {
         return head;
     }
 
-    // similar logic as insertion - take care of 0 position - just rewire links - no
-    // need to delete
-    // specifically - garbage collector will take care of it
+    // similar logic as insertion - take care of 0 position - just rewire links
+    // Always remove the next link while deleting - then only the gc will collect it
+    // - dont do temp = null - temp will point to null but the link will still be
+    // there - won't free the memory
     public static Node delete(Node head, int position) {
-        if (position == 0) {
+        if (position <= 1) {
             // dont do head=null - ref to LL will be lost
+            Node t = head;
             head = head.next;
+            t.next = null; // now will be collected by gc
             return head;
         }
 
         Node curr = head;
-        for (int i = 0; i < position - 1; i++) {
+        for (int i = 1; i < position - 1; i++) {
             curr = curr.next;
         }
 
+        Node t = curr.next;
         curr.next = curr.next.next;
+        t.next = null;
+
         return head;
     }
 
@@ -84,6 +90,9 @@ public class LLBasics {
         if (head.data == data) {
             Node temp = head;
             head = head.next;
+            // Always remove the next link while deleting - then only the gc will collect it
+            // - dont do temp = null - temp will point to null but the link will still be
+            // there - won't free the memory
             temp.next = null;
             return temp;
         }

@@ -17,11 +17,11 @@ public class LongestSubarraySumK {
         int maxLength = Integer.MIN_VALUE;
         int n = arr.length;
 
-        while(start<n) {
-            while(end<n && sum+arr[end]<=k) {
-                sum+=arr[end];
-                if(sum == k) {
-                    maxLength = Math.max(maxLength, end-start+1);
+        while (start < n) {
+            while (end < n && sum + arr[end] <= k) {
+                sum += arr[end];
+                if (sum == k) {
+                    maxLength = Math.max(maxLength, end - start + 1);
                 }
                 end++;
             }
@@ -35,31 +35,32 @@ public class LongestSubarraySumK {
         return maxLength;
     }
 
-    // variable-size sliding window: 2 pointers - if <k inc j - if =k compute max - if >k remove and inc i till >k
-    // does not work if negative numbers are there
+    // variable-size sliding window: 2 pointers - if <k inc j - if =k compute max -
+    // if >k remove and inc i till >k
+    // does not work if negative numbers are there - optimal
     private static int longestSubarraySumK(int[] arr, int k) {
         int i = 0;
         int j = 0;
         int sum = 0;
         int maxLength = Integer.MIN_VALUE;
         int n = arr.length;
-        
-        while(j<n) {
-            sum+=arr[j];
-            if(sum < k) {
+
+        while (j < n) {
+            sum += arr[j];
+            if (sum < k) {
                 // j++;
-            } else if(sum == k) {
-                maxLength = Math.max(maxLength, j-i+1);
+            } else if (sum == k) {
+                maxLength = Math.max(maxLength, j - i + 1);
                 // j++;
-            } else if(sum > k) {
-                while(sum > k) {
+            } else if (sum > k) {
+                while (sum > k) {
                     sum -= arr[i];
                     i++;
                 }
 
                 // for safety maybe? haven't triggered in my test case
-                if(sum == k){
-                    maxLength = Math.max(maxLength, j-i+1);
+                if (sum == k) {
+                    maxLength = Math.max(maxLength, j - i + 1);
                 }
                 // j++;
             }
@@ -71,27 +72,33 @@ public class LongestSubarraySumK {
         return maxLength;
     }
 
-    // store currsum with index in hashmap - in the loop look for currsum-sum - answer is index+1 till i - calc maxLength
+    // store currsum with index in hashmap - in the loop look for currsum-sum -
+    // answer is index+1 till i - calc maxLength
     // similar to subarraywithgivensum - O(N), O(N)
+    // optimal approach if array contains negative numbers
     public static int findMaxLength(int[] nums, int sum) {
-        int currSum = 0; int maxLength = 0;
-        HashMap<Integer,Integer> map = new HashMap<>();
+        int currSum = 0;
+        int maxLength = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
-            currSum+=nums[i];
+            currSum += nums[i];
 
-            if(currSum==sum) {
-                maxLength = Math.max(maxLength, i+1);
+            if (currSum == sum) {
+                maxLength = Math.max(maxLength, i + 1);
             }
 
-            if(map.containsKey(currSum-sum)) {
-                maxLength = Math.max(maxLength, i-map.get(currSum-sum));
+            if (map.containsKey(currSum - sum)) {
+                maxLength = Math.max(maxLength, i - map.get(currSum - sum));
             }
-
-            map.put(currSum, i);
+            // IMPORTANT - need to have an else here if the array contains 0s or negatives -
+            // else map values get overriden
+            else {
+                map.put(currSum, i);
+            }
         }
 
         return maxLength;
     }
-    
+
 }

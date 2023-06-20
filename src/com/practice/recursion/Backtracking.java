@@ -10,7 +10,9 @@ public class Backtracking {
         nQueen(board, 0);
     }
 
+    // not 2 for loops - jump directly to next row after you've put Q in one row
     private static boolean nQueen(int board[][], int row) {
+        // board filled
         if(row == N) {
             for (int[] is : board) {
                 for (int is2 : is) {
@@ -41,7 +43,7 @@ public class Backtracking {
             if(row-1>=0 && col-1>=0 && board[row-1][col-1] == 1) return false; // check upper left diagonal
             if(row-1>=0 && col+1<N && board[row-1][col+1] == 1) return false; // check upper right diagonal
 
-            // no need to check below for rows or diagonals - no filled yet - so safe
+            // no need to check below for rows or diagonals - not filled yet - so safe
         }
 
         return true;

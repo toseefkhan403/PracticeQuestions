@@ -5,9 +5,48 @@ public class ReverseKGroup {
 
     }
 
+    // doing it in one go - reverse k nodes at a time - take care of the next and
+    // prev pointers after each reversal
+    public ListNode reverseKGroup(ListNode head, int k) {
+        // dummy node so we don't have to take care of the head in the first k group reversal
+        ListNode prevRev = new ListNode(-1);
+        ListNode res = prevRev;
+        prevRev.next = head;
+        ListNode curr = head;
+
+        // lastNodeOfSublist after reversal - currently first node of sublist
+        ListNode lastNodeOfSublist = curr;
+        ListNode prev = null;
+
+        while (validHead(curr, k)) {
+            lastNodeOfSublist = curr;
+
+            // start reversal
+            for (int i = 0; i < k; i++) {
+                ListNode temp = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = temp;
+            }
+
+            // join the previous link
+            prevRev.next = prev;
+            // join the next link
+            lastNodeOfSublist.next = curr;
+
+            // update prevRev - no need to update curr - already at correct position
+            prevRev = lastNodeOfSublist;
+        }
+
+        return res.next;
+    }
+
     // reverse k nodes at a time - take care of the next and prev pointers after
     // each reversal
-    public ListNode reverseKGroup(ListNode head, int k) {
+    // going back and forth k times too much - first for storeNext - then for
+    // reversal - then moving revHead to join with storeNext - can do all this in
+    // one go
+    public ListNode reverseKGroupI(ListNode head, int k) {
         ListNode currHead = head;
         // dummy node
         ListNode prevRev = new ListNode(0);
