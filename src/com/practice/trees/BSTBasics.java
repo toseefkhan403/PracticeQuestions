@@ -95,7 +95,7 @@ public class BSTBasics {
         }
     }
 
-    // binary search - iterative
+    // binary search - iterative - O(logn),O(1)
     public TreeNode searchBSTIter(TreeNode root, int val) {
         while (root != null && root.data != val) {
             if (root.data < val) {

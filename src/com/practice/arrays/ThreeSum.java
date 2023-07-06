@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.List;
 
 public class ThreeSum {
-
     public static void main(String[] args) {
         System.out.println(threeSumOpti(new int[] { -1, 0, 1, 0 }));
     }

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RomanToInteger",
+            "request": "launch",
+            "mainClass": "com.practice.strings.RomanToInteger",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
             "name": "ConnectNRopesMinCost",
             "request": "launch",
             "mainClass": "com.practice.heap.ConnectNRopesMinCost",

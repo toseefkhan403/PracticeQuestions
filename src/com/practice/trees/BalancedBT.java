@@ -6,7 +6,7 @@ public class BalancedBT {
         System.out.println(isBalancedOpti(root) != -1);
     }
 
-    // check for every node that its left-right<=1 - O(n^2),O(n)
+    // check for every node recursively that its left-right<=1 - O(n^2),O(n)
     public static boolean isBalanced(TreeNode root) {
         if (root == null)
             return true;

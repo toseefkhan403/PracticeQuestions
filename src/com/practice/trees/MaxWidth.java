@@ -9,7 +9,7 @@ public class MaxWidth {
         System.out.println(widthOfBinaryTree(root));
     }
     
-    // LOT - give numbers to the children - do last-first+1 for the width
+    // LOT - index the children using Pair - do last-first+1 for the width
     // of the level - left side stays on 0 - right increases to give the width - O(n),O(n)
     public static int widthOfBinaryTree(TreeNode root) {
         int result = 0;

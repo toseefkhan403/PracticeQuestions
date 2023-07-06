@@ -15,7 +15,7 @@ public class VerticalOrderTraversal {
 
     // get coordinates - do LO traversal - store in a custom map - traverse the
     // map to get the result
-    // O(nlogn)[logn for PQ], O(n)
+    // O(nlogn)[logn for PQ], O(2n)
     public static List<List<Integer>> verticalTraversal(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null)
@@ -43,6 +43,7 @@ public class VerticalOrderTraversal {
             if (!map.get(vertical).containsKey(level)) {
                 map.get(vertical).put(level, new PriorityQueue<Integer>());
             }
+
             // add to the PQ
             map.get(vertical).get(level).offer(tempNode.data);
 

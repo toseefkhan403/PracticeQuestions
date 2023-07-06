@@ -31,6 +31,7 @@ public class ConstructBT {
         // first node of the preorder = root
         TreeNode root = new TreeNode(preorder[ps]);
         int rootIndex = map.get(preorder[ps]);
+        // left length is required
         int leftLength = rootIndex - is;
 
         root.left = bTreeHelper(ps + 1, ps + leftLength, preorder, is, rootIndex - 1, inorder, map);
@@ -62,6 +63,7 @@ public class ConstructBT {
         // last node of preorder = root
         TreeNode root = new TreeNode(postorder[pe]);
         int rootIndex = map.get(root.data);
+        // left length is required
         int leftLength = rootIndex - is;
 
         root.left = bTreePost(is, rootIndex - 1, inorder, ps, ps + leftLength - 1, postorder, map);

@@ -13,6 +13,7 @@ public class DiameterBT {
         return maxi[0];
     }
 
+    // Max of height of the left subtree and height of the right subtree
     // can do in the height method itself - O(n),O(n)
     // get height - keep track of max path [lh+rh]
     public int diameterRecurOpti(TreeNode node, int[] maxi) {
@@ -26,7 +27,7 @@ public class DiameterBT {
         return 1 + Math.max(lh, rh);
     }
 
-    // go to every node check max path - O(n^2),O(n)
+    // go to every node recursively check max path - O(n^2),O(n)
     public static void diameterRecur(TreeNode node, int[] maxi) {
         if (node == null)
             return;

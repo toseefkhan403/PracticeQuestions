@@ -61,7 +61,7 @@ public class ZigZagLOT {
             for (int i = 0; i < size; i++) {
                 TreeNode temp = queue.remove();
                 int insert = leftToRight ? i : size - 1 - i;
-                // faster than shifting elements in the arraylist
+                // use arr as sublist - faster than shifting elements in the arraylist
                 sublist[insert] = temp.data;
 
                 if (temp.left != null)

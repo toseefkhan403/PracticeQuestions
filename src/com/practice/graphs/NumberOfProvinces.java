@@ -4,7 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NumberOfProvinces {
-    // traversal using adj matrix - O(V+2E), O(2N[visited arr+aux space])
+    // using disjoint set - number of ult parents = no of components
+    // O(v^2 + v)[taking 4alpha ~ constant], O(2v)
+    public int findCircleNumDS(int[][] isConnected) {
+        int V = isConnected.length;
+
+        DisjointSet djSet = new DisjointSet(V);
+        // add to djset - need u,v
+        for (int i = 0; i < V; i++) {
+            for (int j = 0; j < V; j++) {
+                if (isConnected[i][j] == 1 && i != j) {
+                    // edge exists
+                    djSet.unionBySize(i, j);
+                }
+            }
+        }
+
+        int res = 0;
+
+        // 0-based indexing - counting no of ult parents
+        for (int i = 0; i < V; i++) {
+            // can also do djset.findUparent(i) == i
+            if (djSet.parent.get(i) == i)
+                res++;
+        }
+
+        return res;
+    }
+
+    // traversal using adj matrix - O(V+2E), O(2V[visited arr+aux space])
     public int findCircleNum(int[][] isConnected) {
         int n = isConnected.length;
         boolean[] visited = new boolean[n];

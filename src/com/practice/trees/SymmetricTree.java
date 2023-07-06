@@ -22,6 +22,7 @@ public class SymmetricTree {
         if (p.data != q.data)
             return false;
 
+        // check p.left with q.right and q.left with p.right - if either false -> not symmetric
         return isSymRecur(p.left, q.right) && isSymRecur(p.right, q.left);
     }
 }
