@@ -1,6 +1,8 @@
 package com.practice.arrays;
 
 public class MissingAndRepeating {
+    // xor all - left with 2 guys - 2^3 -> doesnt work - bit manip is usually a bad idea
+
     // optimal: use maths - sum of first n natural nos - sum of squares of first n
     // natural nos - make eqns - solve - use long to avoid int overflow - O(n), O(1)
     int[] findTwoElement(int arr[], int N) {

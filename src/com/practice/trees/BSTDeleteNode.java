@@ -1,16 +1,18 @@
 package com.practice.trees;
 
 public class BSTDeleteNode {
-    // without parent pointer
-    // O(h[finding right most node - can go till height of the tree]),O(h[aux space])
+    // O(h[finding right most node - can go till height of the tree]),O(h[aux
+    // space])
     public static TreeNode deleteNode(TreeNode root, int key) {
         if (root == null)
             return null;
 
+        // delete the root
         if (root.data == key)
             return deleteHelper(root);
 
         TreeNode curr = root;
+        // 1. Search the node - without parent pointer(curr's left or right == key)
         while (curr != null) {
             if (curr.data > key) {
                 if (curr.left != null && curr.left.data == key) {
@@ -32,14 +34,15 @@ public class BSTDeleteNode {
         return root;
     }
 
-    // does the actual node deletion
+    // does the actual node deletion - return the node to be attached
     public static TreeNode deleteHelper(TreeNode root) {
+        // 2a. if one branch is null, attach to the other one
         if (root.left == null) {
             return root.right;
         } else if (root.right == null) {
             return root.left;
         } else {
-            // attach right subtree to last right of left subtree
+            // 2b. attach right subtree to last right of left subtree
             TreeNode lastRight = findLastRight(root.left);
             lastRight.right = root.right;
             return root.left;

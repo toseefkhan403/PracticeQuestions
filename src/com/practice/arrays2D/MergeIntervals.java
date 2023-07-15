@@ -5,9 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MergeIntervals {
-    // optimal: sort - merge if merges - set to res if any changes in the interval -
-    // if doesn't merge, add interval to res
-    // O(nlogn+n+n), O(n)
+    // brute: go ahead and merge if merges - O(n^2)
+
+    // optimal: sort - merge with prev if merges - set to res if any changes in the
+    // interval - if doesn't merge, add interval to res - O(nlogn+n+n), O(n)
     public int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
         List<int[]> res = new ArrayList<>();
@@ -61,7 +62,7 @@ public class MergeIntervals {
             }
         }
 
-        return Arrays.copyOfRange(res, 0, index + 1);
+        return Arrays.copyOfRange(res, 0, index + 1); // rest will be 0s
     }
 
 }

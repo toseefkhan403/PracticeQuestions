@@ -1,13 +1,11 @@
 package com.practice.arrays;
 
 public class FindDuplicate {
-    public static void main(String[] args) {
-
-    }
+    // IMPORTANT - xor and sum doesn't work(repeats two or more times)
 
     // same as find LL cycle start - go from element to index - cycle
     // duplicate element is the cycle start because it appears more than once - thus
-    // forms a cycle and its start
+    // forms a cycle and its start - O(n), O(1)
     public int findDuplicate(int[] nums) {
         int slow = nums[0];
         int fast = nums[0];

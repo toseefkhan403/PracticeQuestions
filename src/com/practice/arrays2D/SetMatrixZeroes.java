@@ -9,6 +9,7 @@ public class SetMatrixZeroes {
     }
 
     // do the better approach using first row and col as the required space
+    // use boolean for is first row or col zero - more intuitive - O(2*m*n), O(1)
     public static void setZeroesOpti(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;

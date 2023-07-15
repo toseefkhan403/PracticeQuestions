@@ -3,18 +3,18 @@ package com.practice.trees;
 public class BSTLCA {
     // brute: normal BT method
 
-    // check if both on left or right - if not -> LCA is found
+    // check if both exist on left or right - if not -> LCA is found
     // O(h),O(h[aux space])
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null)
             return null;
 
         int curr = root.data;
-        // both exist on right
+        // curr is less than both -> go right
         if (curr < p.data && curr < q.data) {
             return lowestCommonAncestor(root.right, p, q);
         }
-        // both exist on left
+        // curr is more than both -> go left
         if (curr > p.data && curr > q.data) {
             return lowestCommonAncestor(root.left, p, q);
         }

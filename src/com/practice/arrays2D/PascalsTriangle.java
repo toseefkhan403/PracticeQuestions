@@ -9,9 +9,10 @@ public class PascalsTriangle {
         System.out.println(generate(6));
     }
 
-    // more concise
+    // more concise - O(n^2), O(n[prevArr])
     public static List<List<Integer>> generate(int numRows) {
         List<List<Integer>> res = new ArrayList<>(numRows);
+        // instead of prevArr can use res.get(res.size() - 1) for O(1) space
         List<Integer> prevArr = new ArrayList<>();
 
         // two loops - 1-indexed - 1 till numRows

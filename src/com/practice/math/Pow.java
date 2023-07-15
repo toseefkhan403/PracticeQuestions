@@ -1,6 +1,12 @@
 package com.practice.math;
 
 public class Pow {
+    // odd even - make x larger and n smaller each iteration
+    // 2^10 = 2^5.2^5 = 4^5
+    // 4^5 = 4.4^4
+    // 4^4 = 16^2
+    // 16^2 = 256
+    
     // take examples to understand the formula
     // O(logn), O(1)
     public double myPow(double x, int n) {

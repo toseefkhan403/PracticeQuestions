@@ -18,7 +18,7 @@ public class MergeSort {
 
     // 2 pointers - take small guy and put it in temp arraylist
     private static void merge(int[] arr, int l, int mid, int r) {
-        // dont use array - have to take arr.length everytime - adds unecessary space
+        // dont use array - have to take arr.length everytime - adds unnecessary space
         List<Integer> temp = new ArrayList<>();
         int i = l;
         int j = mid + 1;

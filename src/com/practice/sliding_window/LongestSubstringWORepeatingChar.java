@@ -1,73 +1,58 @@
 package com.practice.sliding_window;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LongestSubstringWORepeatingChar {
+    // sliding window with set - after each iteration check the max length -
+    // O(2n), O(n)
+    public int lengthOfLongestSubstring(String s) {
+        // dont need stringbuilder or string - use SET
+        Set<Character> set = new HashSet<>();
+        int wS = 0;
+        int res = 0;
 
-    public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstring("abcde"));   
-    }
+        for (int wE = 0; wE < s.length(); wE++) {
+            char ch = s.charAt(wE);
+            // shrink the window till the repeating char is not removed
+            while (set.contains(ch)) {
+                set.remove(s.charAt(wS++));
+            }
 
-    // add to res each character if it isn't already present - if present, update maxLength & reset res,i,j - O(n^2)
-    public static int lengthOfLongestSubstring(String s) {
-        String res = "";
-        int maxLength = 1;
-
-        int i = 0;
-        int j = 0;
-
-        if(s.equals("")) {
-            return 0;
+            res = Math.max(res, wE - wS + 1);
+            // add to the set at the end
+            set.add(ch);
         }
 
-        while(i<s.length()) {
-            if(j < s.length() && !res.contains(s.charAt(j)+"")) {
-                res+=s.charAt(j);
-                j++;
-            } else {
-                // reset
-                if(maxLength<res.length()) {
-                    maxLength = res.length();
+        return res;
+    }
+
+    // brute: check for every char the longest substring - use set to check for
+    // repeating chars - O(n^3), O(n)
+    public int lengthOfLongestSubstringBrute(String s) {
+        int res = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i; j < s.length(); j++) {
+                String subString = s.substring(i, j + 1);
+                if (!containsRepeating(subString)) {
+                    res = Math.max(res, subString.length());
                 }
-                i++;
-                res="";
-                j = i;
+
             }
         }
 
-        return maxLength;
+        return res;
     }
 
-    // sliding window probably - similar to above - but when repeating char found, don't inc j - inc i and res = substr - next iteration will check automatically
-    public static int lengthOfLongestSubstringSlid(String s) {
-        String res = "";
-        int maxLength = 1;
-
-        int i = 0;
-        int j = 0;
-
-        if(s.equals("")) {
-            return 0;
+    // using set length concept - O(n), O(n)
+    private boolean containsRepeating(String s) {
+        Set<Character> set = new HashSet<>();
+        for (char ch : s.toCharArray()) {
+            set.add(ch);
         }
 
-        while(i<s.length()) {
-            if(j < s.length() && !res.contains(s.charAt(j)+"")) {
-                res+=s.charAt(j);
-                j++;
-            } else {
-                // reset
-                if(maxLength<res.length()) {
-                    maxLength = res.length();
-                }
-                // if j is over, no point iterating - O(n)
-                if(j >= s.length()-1) {
-                    return maxLength;
-                }
-
-                i++;
-                res=s.substring(i, j);
-            }
-        }
-
-        return maxLength;
+        return set.size() < s.length();
     }
-    
+
 }

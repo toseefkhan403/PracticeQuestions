@@ -13,18 +13,24 @@ public class SortColors {
         }
     }
 
-    // single pass - Dutch national flag algorithm
+    // brute - sort it - O(nlogn), O(n)
+    // better - count sort - O(2n), O(1)
+
+    // single pass - Dutch national flag algorithm - use striver's diagram to remember
     // 0 to low should be 0s and high to n-1 should be 2s
-    // 3 steps - use mid to traverse - if 0 swap with low - if 2 swap with high(but not mid++ here) - if 1 only mid++
+    // 3 steps - use mid to traverse - if 0 swap with low - if 2 swap with high(but
+    // not mid++ here) - if 1 only mid++ - O(n), O(1)
     public static void sortColors(int[] nums) {
+        // 3 pointers with swap
         int low = 0;
         int mid = 0;
         int high = nums.length - 1;
 
         while (mid <= high) {
             if (nums[mid] == 0) {
-                swap(low,mid,nums);
-                low++; mid++;
+                swap(low, mid, nums);
+                low++;
+                mid++;
             } else if (nums[mid] == 1) {
                 mid++;
             } else if (nums[mid] == 2) {
@@ -66,7 +72,8 @@ public class SortColors {
         }
     }
 
-    // make freq map - fill array using map values - worse than previous solution because of the space complexity
+    // make freq map - fill array using map values - worse than previous solution
+    // because of the space complexity
     public static void sortColorsSpace(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {

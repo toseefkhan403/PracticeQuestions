@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Quicksort",
+            "request": "launch",
+            "mainClass": "com.practice.sorting.Quicksort",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
+            "name": "SortBasics",
+            "request": "launch",
+            "mainClass": "com.practice.sorting.SortBasics",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
             "name": "RomanToInteger",
             "request": "launch",
             "mainClass": "com.practice.strings.RomanToInteger",

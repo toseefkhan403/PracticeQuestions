@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BSTKthSmallestNLargest {
-    // keep count to eliminate extra space - O(k),O(k)
+    // optimal: keep count to eliminate extra space - O(k),O(k)
     public int kthSmallestOpti(TreeNode root, int k) {
         int[] res = new int[1];
         // need to pass k and res by reference
@@ -25,6 +25,30 @@ public class BSTKthSmallestNLargest {
         }
 
         inOrderTraversal(root.right, k, res);
+    }
+
+    public int kthSmallestI(TreeNode root, int k) {
+        // passing Only k by reference
+        return inOrderTraversal(root, new int[] { k });
+    }
+
+    // returns the kth smallest
+    public static int inOrderTraversal(TreeNode root, int[] k) {
+        if (root == null)
+            return 0;
+
+        int left = inOrderTraversal(root.left, k);
+        if (left != 0)
+            return left;
+
+        if (--k[0] == 0)
+            return root.data;
+
+        int right = inOrderTraversal(root.right, k);
+        if (right != 0)
+            return right;
+
+        return 0;
     }
 
     // brute: do any traversal - sort it[extra O(nlogn)] - return kth

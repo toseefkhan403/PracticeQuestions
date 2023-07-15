@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 // Bipartite graph: if can color graph with 2 colors - adjacent colors must be different
-// linear and even length cycle graphs are always bipartite - odd length cycle graphs are not
+// linear graphs and even length cycle graphs are always bipartite - odd length cycle graphs are not
 public class IsBipartite {
     // dfs using color array - O(v+2e), O(v)
     public boolean isBipartite(int[][] graph) {

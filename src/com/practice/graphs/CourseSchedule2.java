@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class CourseSchedule2 {
     // return topo sort for DAG - can't do if cycle exists - basically detect graph
-    // cycle using BFS - O(v+e), O(3v)
+    // cycle using BFS(not DFS - need to check cycle separately) - O(v+e), O(3v)
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         // convert pairs to adj list first
         List<List<Integer>> adj = buildGraph(numCourses, prerequisites);

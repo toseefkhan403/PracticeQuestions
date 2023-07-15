@@ -9,9 +9,12 @@ public class NextPermutation {
         }
     }
 
+    // brute: generate all perms - sort em - give next perm - O(n!*n) - too high
+
+    // Remember the algorithm!
     // find partition index from the end - if not found -> last perm - just reverse
     // else if found - swap with the just bigger number and reverse the remaining
-    // part
+    // part - O(2n), O(1)
     public static void nextPermutation(int[] nums) {
         int n = nums.length;
         int pIndex = n - 2; // to avoid doing pIndex-- at the end

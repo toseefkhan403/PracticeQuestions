@@ -12,7 +12,8 @@ public class MajorityElement2 {
         if (nums == null || nums.length == 0)
             return res;
 
-        // no need to check if these are different - just start everything from 0
+        // no need to check if these are different
+        // IMPORTANT! - start everything from 0
         int number1 = nums[0];
         int number2 = nums[0];
 

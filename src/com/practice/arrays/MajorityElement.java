@@ -8,6 +8,7 @@ public class MajorityElement {
         System.out.println(majorityElement(new int[] { 2, 2, 1, 1, 1, 2, 2 }));
     }
 
+    // brute: find count for each guy one by one - return if majority - O(n^2), O(1)
     private static int majorityElementBrute(int nums[]) {
         int maxElement = nums[0];
         int maxCount = 0;
@@ -30,6 +31,7 @@ public class MajorityElement {
         return maxCount > nums.length / 2 ? maxElement : -1;
     }
 
+    // better: use freq map - then check and return if majority - O(2n), O(n)
     private static int majorityElementMap(int nums[]) {
         HashMap<Integer, Integer> map = new HashMap<>();
 
@@ -55,7 +57,7 @@ public class MajorityElement {
     // Moore's Voting Algorithm
     // inc count for element when found - dec when not found - if count=0, change
     // the element and make count 1 - repeat - in the end left with the probable
-    // answer
+    // answer - O(n), O(1)
     private static int majorityElement(int[] nums) {
         int ansIndex = 0;
         int count = 1;
