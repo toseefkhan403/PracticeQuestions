@@ -83,7 +83,9 @@ class ItemComparator implements Comparator<Item> {
         double vpw1 = (double) o1.value / (double) o1.weight;
         double vpw2 = (double) o2.value / (double) o2.weight;
 
+        // which is greater? if 1 -> swap, if -1 dont swap
         if (vpw1 < vpw2) {
+            // o2 greater - descending - swap
             return 1;
         } else {
             return -1;

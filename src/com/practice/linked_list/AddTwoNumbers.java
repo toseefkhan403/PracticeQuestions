@@ -5,7 +5,7 @@ public class AddTwoNumbers {
 
     }
 
-    // add node by node - push carry to the end
+    // add node by node - push carry to the end - O(max(m,n)), O(max(m,n))
     public Node addTwoNumbers(Node l1, Node l2) {
         // dummy node
         Node newHead = new Node(0);

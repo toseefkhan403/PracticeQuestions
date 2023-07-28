@@ -5,10 +5,10 @@ public class ReverseLL {
 
     }
 
+    // reverse links - 3 pointer approach
+    // 3 steps - save curr's next in temp - curr.next to prev - inc prev to curr -
+    // inc curr to temp - O(n),O(1)
     public static Node reverseList(Node head) {
-        // reverse links - 3 pointer approach
-        // 3 steps - save curr's next in temp - curr.next to prev - inc prev to curr -
-        // inc curr to temp
         Node curNode = head;
         Node prev = null;
 
@@ -32,9 +32,7 @@ public class ReverseLL {
         }
 
         Node newHead = recurReverseList(head.next);
-        // this pointer isn't necessary
-        Node headNext = head.next;
-        headNext.next = head;
+        head.next.next = head;
         head.next = null;
 
         return newHead;

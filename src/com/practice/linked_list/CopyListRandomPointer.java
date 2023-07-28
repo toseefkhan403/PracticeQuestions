@@ -7,11 +7,15 @@ public class CopyListRandomPointer {
 
     // brute: measure distance of each random pointer - add same distance node in
     // the random pointers in the copy - O(n^2)
-    // better: do one to one mapping of nodes in a map - key,value = original node, copy node
+
+    // better: do one to one mapping of nodes in a map - key,value = original node,
+    // copy node
     // - key's random will point to another key(say x) - value's random will point
     // to x's value - O(2n),O(n)
+
     // optimal: do mapping without map - insert new nodes alternately in the
-    // original list - add randoms using next pointers
+    // original list - add randoms using next pointers - break the alternate links -
+    // add the null checks later
     public Node copyRandomList(Node head) {
         if (head == null) {
             return null;

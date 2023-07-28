@@ -5,6 +5,7 @@ public class MergeTwoSortedLists {
 
     }
 
+    // same as merge() of merge sort
     // compare what's smaller - add to result and move to next - if one of the list
     // runs out, fill with the other one - O(m+n),O(m+n)
     // whenever need to create a LL - use dummy node and keep filling its next - at

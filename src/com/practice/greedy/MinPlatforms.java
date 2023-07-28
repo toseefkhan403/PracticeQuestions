@@ -5,8 +5,8 @@ import java.util.Arrays;
 // find the minimum number of platforms required at the railway station such that no train waits.
 public class MinPlatforms {
     // NOT same as n meetings(just count the no of rooms)
-    // sort arrival and dep separately - order doesnt matter - track arr and dep of
-    // the trains on platforms manually - O(2nlogn+2n), O(1)
+    // sort arrival and dep separately - doesnt matter when arrives - matters when
+    // it leaves - O(2nlogn+2n), O(1)
     static int findPlatform(int arr[], int dep[], int n) {
         Arrays.sort(arr);
         Arrays.sort(dep);
@@ -16,6 +16,7 @@ public class MinPlatforms {
 
         int i = 1, j = 0;
 
+        // IMPORTANT! - use 2 ptrs to traverse in a single while loop
         while (i < n && j < n) {
             if (arr[i] <= dep[j]) {
                 // arrive the trains on new platforms

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "QueueUsingArrays",
+            "request": "launch",
+            "mainClass": "com.practice.stack.QueueUsingArrays",
+            "projectName": "PracticeQuestions_265eed07"
+        },
+        {
+            "type": "java",
             "name": "Quicksort",
             "request": "launch",
             "mainClass": "com.practice.sorting.Quicksort",

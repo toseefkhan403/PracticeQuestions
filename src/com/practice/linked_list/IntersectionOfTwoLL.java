@@ -9,6 +9,7 @@ public class IntersectionOfTwoLL {
 
     // optimal 1: find lengths - find diff - move longer by diff -> aligned - start
     // traversing together - will meet at the intersection pt.
+
     // optimal 2: traverse d1 and d2 - when you reach end, go to the other list -
     // will meet at the intersection pt. - or at null if there is no int. pt.
     // O(2*m), O(1)
@@ -25,6 +26,7 @@ public class IntersectionOfTwoLL {
         return d1;
     }
 
+    // put in hashset - the first node which appears again is the ans
     // O(m+n), O(m)
     public static ListNode getIntersectionNodeSpace(ListNode headA, ListNode headB) {
         // hash the address

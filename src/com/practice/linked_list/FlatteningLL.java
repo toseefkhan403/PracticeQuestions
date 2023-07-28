@@ -31,7 +31,7 @@ public class FlatteningLL {
         return res.bottom;
     }
 
-    // merge vertically - according to the bottom value
+    // merge vertically - according to the bottom value - without extra space(no new nodes)
     public static NodeF mergeSorted(NodeF a, NodeF b) {
         NodeF temp = new NodeF(-1);
         NodeF res = temp;

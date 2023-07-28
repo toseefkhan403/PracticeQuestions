@@ -7,6 +7,8 @@ public class LargestRectangleHistogram {
 
     }
 
+    // todo one pass soln - only go for it when interviewer asks for it
+
     // make the left and right search for smaller element easier by using stack -
     // then apply formula
     public static int largestRectangleArea(int[] heights) {

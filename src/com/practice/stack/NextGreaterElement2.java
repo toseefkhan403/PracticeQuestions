@@ -3,12 +3,8 @@ package com.practice.stack;
 import java.util.Stack;
 
 public class NextGreaterElement2 {
-    public static void main(String[] args) {
-
-    }
-
-    // create imaginary array copy in front of the original array - go from right to
-    // left
+    // create imaginary array copy in front of the orig array - circular array -
+    // go from right to left
     // algo: push arr elements to stack from the end - keep popping till you find
     // greater element - add it to ans if found - else add -1 - using LIFO property
     public static int[] nextGreaterElements(int[] nums) {

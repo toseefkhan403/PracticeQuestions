@@ -7,43 +7,32 @@ public class JobSequencing {
     // that can do earlier jobs as well)
     // sort jobs on the basis of profit - do job on deadline - O(nlogn+n*m[m=max
     // deadline - going back for every n]), O(m[tt arr])
-    int[] jobSchedulingI(Job arr[], int n) {
-        // desc order - profits
+    int[] JobSchedulingI(Job arr[], int n) {
         Arrays.sort(arr, (a, b) -> b.profit - a.profit);
 
-        // maximum deadline = n (constraints)
-        boolean[] timeTable = new boolean[n + 1];
-        Arrays.fill(timeTable, false);
-
+        int[] timeline = new int[n + 1];
+        int jobCount = 0;
         int profit = 0;
-        int jobs = 0;
 
         for (int i = 0; i < n; i++) {
+            // pick and do on deadline
             Job job = arr[i];
 
-            // if you are free, do the job on the deadline
-            if (!timeTable[job.deadline]) {
-                jobs++;
-                profit += job.profit;
-                timeTable[job.deadline] = true;
-            } else {
-                // try to do it before the deadline - NOT i-1
-                int j = job.deadline - 1;
-                while (j > 0) {
-                    if (!timeTable[j]) {
-                        // do the job
-                        jobs++;
-                        profit += job.profit;
-                        timeTable[j] = true;
-                        break;
-                    }
+            // find available space
+            int when = job.deadline;
+            while (when > 0 && timeline[when] != 0) {
+                when--;
+            }
 
-                    j--;
-                }
+            if (when != 0) {
+                // can do the job
+                timeline[when] = 1;
+                jobCount++;
+                profit += job.profit;
             }
         }
 
-        return new int[] { jobs, profit };
+        return new int[] { jobCount, profit };
     }
 
     int[] jobSequencing(Job arr[], int n) {
@@ -83,6 +72,44 @@ public class JobSequencing {
         return ans;
     }
 
+    int[] jobSchedulingI(Job arr[], int n) {
+        // desc order - profits
+        Arrays.sort(arr, (a, b) -> b.profit - a.profit);
+
+        // maximum deadline = n (constraints)
+        boolean[] timeTable = new boolean[n + 1];
+        Arrays.fill(timeTable, false);
+
+        int profit = 0;
+        int jobs = 0;
+
+        for (int i = 0; i < n; i++) {
+            Job job = arr[i];
+
+            // if you are free, do the job on the deadline
+            if (!timeTable[job.deadline]) {
+                jobs++;
+                profit += job.profit;
+                timeTable[job.deadline] = true;
+            } else {
+                // try to do it before the deadline - NOT i-1
+                int j = job.deadline - 1;
+                while (j > 0) {
+                    if (!timeTable[j]) {
+                        // do the job
+                        jobs++;
+                        profit += job.profit;
+                        timeTable[j] = true;
+                        break;
+                    }
+
+                    j--;
+                }
+            }
+        }
+
+        return new int[] { jobs, profit };
+    }
 }
 
 class Job {

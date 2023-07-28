@@ -1,15 +1,19 @@
 package com.practice.searching.binary_search;
 
 public class BooksAllocation {
-
     public static void main(String[] args) {
         // contiguous search space - therefore can apply binary search
         System.out.println(booksAllocation(new int[] { 12, 34, 67, 90 }, 2));
         System.out.println(shipWithinDays(new int[] { 12, 34, 67, 90 }, 2));
     }
 
-    // binary search between max of the array and sum of the array - O(n*logn)
+    // binary search between max of the array and sum of the array - O(n*log(range =
+    // high - low)), O(1)
     private static int booksAllocation(int[] nums, int students) {
+        // someone will get 0 pages - invalid
+        if (students > nums.length)
+            return -1;
+
         int res = Integer.MAX_VALUE;
         int low = nums[0]; // max of the array
         int high = 0; // sum of the array
@@ -35,6 +39,8 @@ public class BooksAllocation {
         return res;
     }
 
+    // no one must get > barrier books - keep everyone close to the barrier - it
+    // will minimize then
     private static boolean isAllocatingPossible(int barrier, int[] nums, int students) {
         int allocatingStds = 1;
         int pages = 0;
@@ -97,7 +103,8 @@ public class BooksAllocation {
             // can work better without this line
             // if (barrier < weights[i]) return false;
 
-            // checking if barrier is crossed - inc days and reset weights if crossed - else keep shipping weights
+            // checking if barrier is crossed - inc days and reset weights if crossed - else
+            // keep shipping weights
             if (allocatedWeight + weights[i] > barrier) {
                 allocatedDays++;
                 // reset for the new day
