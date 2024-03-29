@@ -9,14 +9,15 @@ public class BoundaryTraversal {
         System.out.println(boundaryTraversal(root));
     }
 
-    // left nodes + leaf nodes + right nodes in reverse
+    // left nodes + leaf nodes + right nodes in reverse - O(n), O(n)
     public static List<Integer> boundaryTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null)
             return result;
 
         result.add(root.data);
-        // single node - need this check else prints root twice - leafNodes() adds it again
+        // single node - need this check else prints root twice - leafNodes() adds it
+        // again
         if (isLeafNode(root))
             return result;
 
@@ -32,6 +33,9 @@ public class BoundaryTraversal {
 
     // preorder traversal - add to result and return if leaf node
     public static void leafNodes(TreeNode node, List<Integer> result) {
+        if (node == null)
+            return;
+
         if (isLeafNode(node)) {
             result.add(node.data);
             return;
@@ -41,6 +45,7 @@ public class BoundaryTraversal {
         leafNodes(node.right, result);
     }
 
+    // dont take the leftView method - do iteratively on the left branch only
     // go left till you cant - then go right - add non leaf nodes only
     public static void leftNodes(TreeNode node, List<Integer> result) {
         TreeNode curr = node.left;
@@ -55,6 +60,7 @@ public class BoundaryTraversal {
         }
     }
 
+    // dont take the rightView method - do iteratively on the right branch only
     // go right till you cant - then go left - add non leaf nodes only - reverse and
     // add to result
     public static void rightNodes(TreeNode node, List<Integer> result) {

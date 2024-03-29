@@ -3,10 +3,9 @@ package com.practice.searching.binary_search;
 import java.util.Arrays;
 
 public class AggressiveCows {
-    // same approach but with binary search - same search space - O(nlogn +
+    // same as brute but with binary search - same search space - O(nlogn +
     // n*log(dist(max-min))), O(1)
     public static int solve(int n, int k, int[] stalls) {
-        // same approach but with binary search
         Arrays.sort(stalls);
 
         int low = 1;
@@ -44,8 +43,8 @@ public class AggressiveCows {
         return -1;
     }
 
-    // min barrier(every cow must be placed > barrier dist b/w them) - can put all
-    // cows - O(n)
+    // min barrier(every cow must be placed > barrier dist b/w them) - can put All
+    // cows? - O(n)
     public static boolean canPutCows(int barrier, int[] stalls, int k) {
         // put on the first stall - greedy
         int cows = 1;

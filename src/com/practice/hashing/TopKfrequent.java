@@ -8,10 +8,10 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class TopKfrequent {
-    // bucket sort - instead of storing as value, freq(unbounded) - store as freq,
-    // {value}(bounded) - O(3n), O(2n) [linear]
+    // bucket sort - freq as index - instead of storing as value, freq(unbounded) -
+    // store as freq, {value}(bounded) - O(3n), O(2n) [linear]
     public int[] topKFrequent(int[] nums, int k) {
-        // value, freq
+        // freq map needed - value, freq
         Map<Integer, Integer> map = new HashMap<>();
 
         for (int it : nums) {
@@ -54,6 +54,7 @@ public class TopKfrequent {
             map.put(it, freq + 1);
         }
 
+        // cant use max heap - some max guys will be lost
         // min heap of size k on the basis of freq
         PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> a.freq - b.freq);
 

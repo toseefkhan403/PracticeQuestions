@@ -9,12 +9,14 @@ public class KthElementTwoSortedArrays {
             return kthElement(arr2, arr1, m, n, k);
         }
 
+        // RATTA
         // edge cases: have to take some elements from arr1 if k > m
         int low = Math.max(0, k - m);
         // cant take all elements from arr1 if k < n
         int high = Math.min(n, k);
 
         while (low <= high) {
+            // cut1 = mid
             int cut1 = (low + high) / 2;
             int cut2 = k - cut1;
 

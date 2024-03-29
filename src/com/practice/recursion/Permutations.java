@@ -15,7 +15,7 @@ public class Permutations {
         return ans;
     }
 
-    // keep index - swap with ahead elements - do recursion with index+1 - unswap
+    // keep index - swap with AHEAD elements - do recursion with index+1 - unswap
     // when you come back
     private static void recurPermute(int index, int[] nums, List<List<Integer>> ans) {
         // if index reaches nums end - perm found
@@ -26,7 +26,7 @@ public class Permutations {
             for (int i = 0; i < nums.length; i++) {
                 ds.add(nums[i]);
             }
-            ans.add(new ArrayList<>(ds));
+            ans.add(ds);
             return;
         }
 

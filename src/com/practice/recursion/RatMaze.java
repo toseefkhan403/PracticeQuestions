@@ -13,7 +13,7 @@ public class RatMaze {
         System.out.println(findPathOpti(m, n));
     }
 
-    // O(4^(m*n)), O(m*n)
+    // O(4^(n*n)), O(n*n)
     public static ArrayList<String> findPathOpti(int[][] m, int n) {
         int vis[][] = new int[n][n];
         int di[] = {
@@ -55,12 +55,13 @@ public class RatMaze {
 
                 vis[i][j] = 1;
                 solve(nexti, nextj, a, n, ans, move + dir.charAt(ind), vis, di, dj);
+                // IMPORTANT - backtracking step
                 vis[i][j] = 0;
             }
         }
     }
 
-    // O(4^(m*n)), O(m*n)
+    // O(4^(n*n)), O(n*n)
     public static ArrayList<String> findPath(int[][] m, int n) {
         ArrayList<String> result = new ArrayList<>();
         if (m[0][0] == 0)

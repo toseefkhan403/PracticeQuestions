@@ -14,15 +14,14 @@ public class VerticalOrderTraversal {
     }
 
     // get coordinates - do LO traversal - store in a custom map - traverse the
-    // map to get the result
-    // O(nlogn)[logn for PQ], O(2n)
+    // map to get the result - O(nlogn)[logn for PQ], O(2n)
     public static List<List<Integer>> verticalTraversal(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null)
             return result;
 
         // store coordinates thru LO traversal in custom map
-        // vertical -> level -> elements kept in sorted order[in PQ]
+        // vertical -> {level -> elements kept in sorted order[in PQ]}
         TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> map = new TreeMap<>();
 
         // Queue for LOT - special class to store the coordinates
@@ -36,11 +35,12 @@ public class VerticalOrderTraversal {
             int vertical = temp.vertical;
             int level = temp.level;
 
-            // need to add to avoid nullpointer exceptions
+            // need to put in map to avoid nullpointer exceptions
             if (!map.containsKey(vertical)) {
                 map.put(vertical, new TreeMap<>());
             }
             if (!map.get(vertical).containsKey(level)) {
+                // need to put in map to avoid nullpointer exceptions
                 map.get(vertical).put(level, new PriorityQueue<Integer>());
             }
 
@@ -60,7 +60,7 @@ public class VerticalOrderTraversal {
             // PQs for the same vertical - those needs to be merged
             result.add(new ArrayList<>()); // || temp = new ArrayList
             for (PriorityQueue<Integer> pq : level.values()) {
-                // treat it like a queue - not a list
+                // treat it like a queue - not a list - else wrong order
                 while (!pq.isEmpty()) {
                     result.get(result.size() - 1).add(pq.poll()); // || add to temp
                 }

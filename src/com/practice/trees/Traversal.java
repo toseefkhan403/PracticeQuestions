@@ -1,5 +1,7 @@
 package com.practice.trees;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class Traversal {
@@ -15,15 +17,16 @@ public class Traversal {
 
         preOrderIterative(root);
         System.out.println();
-        preOrderTraversal(root);
-        System.out.println();
+        // preOrderTraversal(root);
+        // System.out.println();
         inOrderIterative(root);
         System.out.println();
-        inOrderTraversal(root);
-        System.out.println();
+        // inOrderTraversal(root);
+        // System.out.println();
         postOrderTraversal(root);
         System.out.println();
-        postOrderIterative1Stack(root);
+        // postOrderIterative1Stack(root);
+        allInOneTraversal(root);
     }
 
     // DFS - preorder, inorder, postorder - recursion
@@ -158,6 +161,64 @@ public class Traversal {
                 }
             }
         } while (!stack.isEmpty());
+    }
+
+    // remember the algorithm - use node,num pair - diff step for num = 1,2,3 -
+    // O(3n), O(4n)
+    public static void allInOneTraversal(TreeNode node) {
+        if (node == null)
+            return;
+        Stack<Pair> stack = new Stack<>();
+        // push new nodes with num = 1
+        stack.push(new Pair(node, 1));
+        // lists needed - cant print directly in the loop
+        List<Integer> preorder = new ArrayList<>();
+        List<Integer> inorder = new ArrayList<>();
+        List<Integer> postorder = new ArrayList<>();
+
+        while (!stack.isEmpty()) {
+            Pair p = stack.pop();
+
+            // 1 - add to preorder - push num+1 - push left child
+            if (p.num == 1) {
+                preorder.add(p.node.data);
+                p.num++;
+                // push same node with num+1
+                stack.push(p);
+
+                // push new nodes with num = 1
+                if (p.node.left != null)
+                    stack.push(new Pair(p.node.left, 1));
+            } else if (p.num == 2) {
+                // 2 - add to inorder - push num+1 - push right child
+                inorder.add(p.node.data);
+                p.num++;
+                // push same node with num+1
+                stack.push(p);
+
+                if (p.node.right != null)
+                    stack.push(new Pair(p.node.right, 1));
+            } else if (p.num == 3) {
+                // 3 - just add to postorder - dont push again
+                postorder.add(p.node.data);
+            }
+        }
+
+        System.out.println();
+        for (int it : preorder) {
+            System.out.print(it + " ");
+        }
+        System.out.println();
+
+        for (int it : inorder) {
+            System.out.print(it + " ");
+        }
+        System.out.println();
+
+        for (int it : postorder) {
+            System.out.print(it + " ");
+        }
+
     }
 
 }

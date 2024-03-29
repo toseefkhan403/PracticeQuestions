@@ -24,7 +24,7 @@ public class TopNBottomView {
         Queue<Tuple> q = new LinkedList<>();
         q.offer(new Tuple(root, 0));
 
-        // vertical, node data
+        // vertical, node data - sorted keys -> treemap
         Map<Integer, Integer> map = new TreeMap<>();
 
         while (!q.isEmpty()) {
@@ -62,7 +62,7 @@ public class TopNBottomView {
         Queue<Tuple> q = new LinkedList<>();
         q.offer(new Tuple(root, 0));
 
-        // vertical, data
+        // vertical, data - sorted keys -> treemap
         Map<Integer, Integer> map = new TreeMap<>();
 
         while (!q.isEmpty()) {

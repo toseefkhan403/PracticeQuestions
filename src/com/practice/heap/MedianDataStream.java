@@ -4,6 +4,11 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class MedianDataStream {
+    // brute: store in a list - addNum is O(n[need to store in sorted order]) -
+    // median is O(1)
+
+    // optimal: use two heaps - one for small guys, one for big - keep them equal in
+    // size - middle is the median - addnum is O(logn) - median is O(1)
     PriorityQueue<Integer> maxHeap;
     PriorityQueue<Integer> minHeap;
 
@@ -25,7 +30,7 @@ public class MedianDataStream {
             minHeap.offer(num);
         }
 
-        // either should be equal or maxheap shud be 1 more than the minheap
+        // rebalance - should be equal or maxheap is 1 more than the minheap
         if (maxHeap.size() > minHeap.size() + 1) {
             minHeap.offer(maxHeap.poll());
         } else if (minHeap.size() > maxHeap.size()) {
